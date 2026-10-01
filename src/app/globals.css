@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-serif), Georgia, Cambria, "Times New Roman", serif;
+  
+  /* Paleta Nobre: Ouro Envelhecido & Luz Espiritual */
+  --color-brand-50: #fbf8f1;
+  --color-brand-100: #f6efe0;
+  --color-brand-200: #ecdec2;
+  --color-brand-300: #e0c89c;
+  --color-brand-400: #d4b073;
+  --color-brand-500: #c5974b;
+  --color-brand-600: #aa7a35;
+  --color-brand-700: #885c27;
+  --color-brand-800: #6f4923;
+  --color-brand-900: #5c3c1e;
+  
+  /* Superfícies Orgânicas e Acolhedoras: Pedra Quente / Carvão Sagrado */
+  --color-surface-50: #fafaf9;
+  --color-surface-100: #f5f5f4;
+  --color-surface-200: #e7e5e4;
+  --color-surface-300: #d6d3d1;
+  --color-surface-400: #a8a29e;
+  --color-surface-500: #78716c;
+  --color-surface-600: #44403c;
+  --color-surface-700: #292524;
+  --color-surface-800: #1c1917;
+  --color-surface-900: #141211;
+  --color-surface-950: #0c0a09;
+}
+
+/* Estilos de Base */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--color-surface-950);
+  color: var(--color-surface-100);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Scrollbar refinada e discreta */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-700);
+  border-radius: 999px;
+}
+
+/* Área de segurança para celulares PWA */
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 1rem);
+}
+
+/* Indicadores de pulso sutis */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
