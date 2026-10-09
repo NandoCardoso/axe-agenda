@@ -21,6 +21,16 @@ alter table configuracoes enable row level security;
 alter table solicitacoes enable row level security;
 
 -- ============================
+-- Defesa em Profundidade: Privilégios de Tabela (Grants)
+-- ============================
+revoke all on eventos from anon;
+revoke select, update, delete on solicitacoes from anon;
+grant select on tipos_gira to anon;
+grant select on regras_disponibilidade to anon;
+grant select on configuracoes to anon;
+grant insert on solicitacoes to anon;
+
+-- ============================
 -- tipos_gira
 -- ============================
 
